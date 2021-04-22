@@ -7,13 +7,23 @@ let displayString = ''
 var display = document.getElementById("display");
 
 updateTotal = (evalStr, displayStr) => {
-    evalString += `${evalStr}`;
-    displayString += displayStr
+    if (displayString.startsWith('0.')) {
+        evalString += `${evalStr}`;
+        displayString += displayStr;
+    }    
+    else if (displayString.startsWith('0')) {
+        evalString = `${evalStr}`
+        displayString = displayStr.toString()
+    }
+    else {
+        evalString += `${evalStr}`;
+        displayString += displayStr;
+    }
     display.innerHTML = `<h1>${displayString}</h1>`;
     console.log(evalString, displayString)
 }
 
-
+updateTotal('', 0)
 // Number Button Handlers
 var one = document.getElementById('one');
 one.addEventListener('click', () => {updateTotal(1, 1)});
@@ -58,7 +68,7 @@ var subtract = document.getElementById('subtract');
 subtract.addEventListener('click', () => {
     displayString = ''
     updateTotal('-', eval(evalString))
-    evalString = evalString.replace(/[0-9]+/, displayString)
+    evalString = evalString.replace(/[0-9]+[\+,\-,\/,\*][0-9]+/, displayString)
     displayString = ''
 })
 
@@ -91,5 +101,11 @@ equals.addEventListener('click', () => {
 let decimal = document.getElementById('decimal');
 decimal.addEventListener('click', () => {
     updateTotal('.','.')
-    evalString = evalString.replace(/[0-9]+[\+,\-,\/,\*][0-9]+/, displayString)
+})
+
+let clear = document.getElementById('clear')
+clear.addEventListener('click', () => {
+    evalString = ''
+    displayString = ''
+    updateTotal('', 0)
 })
