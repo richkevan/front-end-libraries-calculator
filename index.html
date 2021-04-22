@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Front End Libraries Calculator</title>
+    <link rel="stylesheet" href="./calc.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.3.2/math.min.js" integrity="sha512-vI5FJgd8TB/jorqozFDviYmt4s4j3rLDrGvGnvUh+SXql7YF+MjndWDLd/3q1Ez6Pu8exLyi2AFYerrOHqey0A==" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div>
+        <div id='display'></div>
+        <div class='row'>
+          <div id='numbers'>
+            <div class='row'>
+              <div id='one'>1</div>
+              <div id='two'>2</div>
+              <div id='three'>3</div>
+            </div>
+            <div class='row'>
+              <div id='four'>4</div>
+              <div id='five'>5</div>
+              <div id='six'>6</div>
+            </div>
+            <div class='row'>
+              <div id='seven'>7</div>
+              <div id='eight'>8</div>
+              <div id='nine'>9</div>
+            </div>
+            <div class='row'>
+              <div id='zero'>0</div>
+              <div id='decimal'>.</div>
+              <div id='clear'>AC</div>
+            </div>
+          </div>
+          <div id='operations'>
+            <div id='add'>+</div>
+            <div id='subtract'>-</div>
+            <div id='divide'>/</div>
+            <div id='multiply'>x</div>
+            <div id='equals'>=</div>
+          </div>
+        </div>
+      </div>
+</body>
+<script src='./calc.js'></script>
+</html>
